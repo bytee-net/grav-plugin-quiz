@@ -1,0 +1,9 @@
+en:
+  PLUGIN_QUIZ:
+    QUIZ_SETTINGS: Quiz Server settings
+    API_KEY: Admin API Key
+    TEXT_API_KEY: (Optional) Admin key for form editing
+    QUESTION_ENDPOINT: Question API Endpoint
+    TEXT_QUESTION_ENDPOINT: (Default) REST API Endpoint for the questions, can also be a JSON file
+    API_ENDPOINT: API Endpoint
+    TEXT_API_ENDPOINT: REST API Endpoint for new questions / reports / stats etc.

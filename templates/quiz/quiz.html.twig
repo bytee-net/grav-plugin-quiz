@@ -1,0 +1,26 @@
+{% if quiz is null %}
+    {% set quiz = grav.session.getFlashObject('quiz') %}
+{% endif  %}
+
+{% do assets.addCss('plugin://quiz/assets/css/app.css') %}
+{% do assets.addJs('plugin://quiz/assets/js/app.js', {group:'bottom'}) %}
+
+<noscript>
+    <strong>We're sorry but Bytee Quiz doesn't work properly without JavaScript enabled. Please enable
+        it to continue.</strong>
+</noscript>
+<div id="app"></div>
+
+{% do assets.addInlineJs("
+  window.Quiz = {
+    title: '"~ quiz.title ~ "',
+    description: '"~ quiz.quiz.description ~ "',
+    questionCount: "~ quiz.quiz.questionCount ~ ",
+    duration: "~ quiz.quiz.duration ~ ",
+    randomize: "~ quiz.quiz.randomize ~ ",
+    customizeQuiz: " ~ quiz.quiz.customizeQuiz ~ ",
+    questionsEndpoint: '"~ quiz.quiz.questionsEndpoint ~ "',
+    apiEndpoint: '"~ config.plugins.quiz.apiEndpoint ~"',
+  };
+") %}
+

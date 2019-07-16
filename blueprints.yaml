@@ -1,0 +1,51 @@
+name: Quiz
+version: 0.1.0
+description: Allows to create quizes with Grav (based on Vue.js)
+icon: plug
+author:
+  name: Yves Hoppe
+  email: contact@bytee.net
+  url: bytee.net
+homepage: https://github.com/bytee-net/grav-plugin-quiz
+demo: https://bytee.net
+keywords: grav, plugin, etc
+bugs: https://github.com/bytee-net/grav-plugin-quiz/issues
+docs: https://github.com/bytee-net/grav-plugin-quiz/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    quiz:
+      type: section
+      title: PLUGIN_QUIZ.QUIZ_SETTINGS
+
+      fields:
+        api_key:
+          type: text
+          label: PLUGIN_QUIZ.API_KEY
+          help: PLUGIN_QUIZ.TEXT_API_KEY
+          default: secure
+
+        questionsEndpoint:
+          type: text
+          label: PLUGIN_QUIZ.QUESTION_ENDPOINT
+          help: PLUGIN_QUIZ.TEXT_QUESTION_ENDPOINT
+          default: http://localhost:3000/questions
+
+        apiEndpoint:
+          type: text
+          label: PLUGIN_QUIZ.API_ENDPOINT
+          help: PLUGIN_QUIZ.TEXT_API_ENDPOINT
+          default: http://localhost:3000

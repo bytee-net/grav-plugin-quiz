@@ -1,0 +1,4 @@
+enabled: true
+settings:
+  questionsEndpoint: 'http://localhost:3000/questions'
+  apiEndpoint: 'http://localhost:3000'
